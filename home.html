@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ANIMESIA - Home</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="particles"></div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="logo.png" alt="ANIMESIA Logo">
+        </div>
+
+        <nav>
+    <a href="home.html">Home</a>
+    <a href="home.html#anime-section">Anime</a>
+    <a href="power-arena.html">Power Arena</a>
+    <a href="home.html#genres">Genres</a>
+    <a href="mylist.html">My List</a>
+    <a href="profile.html">
+    Profile
+</a>
+<a href="dashboard.html">
+    Dashboard
+</a>
+</nav>
+
+        <!-- SEARCH -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="animeSearch"
+                class="search-box"
+                placeholder="Search anime..."
+                autocomplete="off"
+            >
+
+            <button
+                id="searchBtn"
+                class="search-btn"
+                type="button">
+
+                🔍
+
+            </button>
+
+        </div>
+
+
+        <!-- PROFILE -->
+
+        <div class="profile">
+
+            <span id="welcomeUser">
+                User
+            </span>
+
+            <button
+                id="logoutBtn"
+                type="button">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+  <!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="hero-small">
+            WELCOME TO
+        </p>
+
+        <h1>
+            ANIMESIA
+        </h1>
+
+        <h2>
+            ENTER A NEW UNIVERSE
+        </h2>
+
+        <p>
+            Discover legendary anime worlds,
+            powerful characters, unforgettable
+            battles and stories that stay with you.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                type="button"
+                onclick="window.location.href='anime-details.html?anime=naruto'">
+
+                ▶ WATCH
+
+            </button>
+
+            <button
+                type="button"
+                id="heroMyListBtn"
+                data-anime="Naruto">
+
+                + ADD TO MY LIST
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+        <!-- ================= FILTER ================= -->
+
+       <div class="filter-panel">
+
+    <div class="genre-filter">
+
+        <button
+            class="active"
+            type="button"
+            onclick="showAllAnime()">
+            ALL
+        </button>
+
+        <button
+            type="button"
+            onclick="filterGenre('Action')">
+            ACTION
+        </button>
+
+        <button
+            type="button"
+            onclick="filterGenre('Adventure')">
+            ADVENTURE
+        </button>
+
+        <button
+            type="button"
+            onclick="filterGenre('Fantasy')">
+            FANTASY
+        </button>
+
+        <button
+            type="button"
+            onclick="filterGenre('Drama')">
+            DRAMA
+        </button>
+
+        <button
+            type="button"
+            onclick="filterGenre('School')">
+            SCHOOL
+        </button>
+
+    </div>
+
+    <div class="sort-container">
+
+        <label for="animeSort">
+            SORT BY
+        </label>
+
+        <select id="animeSort">
+
+            <option value="default">
+                Default
+            </option>
+
+            <option value="ratingHigh">
+                Rating: High → Low
+            </option>
+
+            <option value="ratingLow">
+                Rating: Low → High
+            </option>
+
+            <option value="yearNew">
+                Year: Newest
+            </option>
+
+            <option value="yearOld">
+                Year: Oldest
+            </option>
+
+            <option value="az">
+                Name: A → Z
+            </option>
+
+            <option value="za">
+                Name: Z → A
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+
+
+        <!-- ================= ANIME GRID ================= -->
+
+        <!--
+            Anime cards will be automatically
+            generated from animeData in script.js
+        -->
+
+        <div
+            class="anime-grid"
+            id="animeGrid">
+
+        </div>
+
+
+
+        <!-- ================= NO RESULT ================= -->
+
+        <div
+            id="noAnimeMessage"
+            class="no-anime-message">
+
+            <h3>
+                No Anime Found
+            </h3>
+
+            <p>
+                Try another anime name or genre.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= GENRES ================= -->
+
+    <section
+        class="genres-section"
+        id="genres">
+
+
+        <p class="hero-small">
+            EXPLORE
+        </p>
+
+        <h2>
+            Anime Genres
+        </h2>
+
+
+
+        <div class="genres-grid">
+
+
+            <!-- ACTION -->
+
+            <div
+                class="genre-card"
+                onclick="filterGenre('Action')">
+
+                <h3>
+                    ⚔ Action
+                </h3>
+
+                <p>
+                    Powerful battles, intense fights
+                    and legendary warriors.
+                </p>
+
+            </div>
+
+
+
+            <!-- ADVENTURE -->
+
+            <div
+                class="genre-card"
+                onclick="filterGenre('Adventure')">
+
+                <h3>
+                    🌎 Adventure
+                </h3>
+
+                <p>
+                    Explore new worlds, journeys
+                    and unforgettable adventures.
+                </p>
+
+            </div>
+
+
+
+            <!-- FANTASY -->
+
+            <div
+                class="genre-card"
+                onclick="filterGenre('Fantasy')">
+
+                <h3>
+                    ✦ Fantasy
+                </h3>
+
+                <p>
+                    Magic, supernatural powers,
+                    monsters and mysterious worlds.
+                </p>
+
+            </div>
+
+
+
+            <!-- DRAMA -->
+
+            <div
+                class="genre-card"
+                onclick="filterGenre('Drama')">
+
+                <h3>
+                    🎭 Drama
+                </h3>
+
+                <p>
+                    Emotional stories, powerful
+                    characters and unforgettable moments.
+                </p>
+
+            </div>
+
+
+
+            <!-- SCHOOL -->
+
+            <div
+                class="genre-card"
+                onclick="filterGenre('School')">
+
+                <h3>
+                    🎓 School
+                </h3>
+
+                <p>
+                    School life, friendships,
+                    rivalries and exciting adventures.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    ANIMESIA
+                </h2>
+
+                <p>
+                    Enter a new universe of anime,
+                    discovery and adventure.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="#anime-section">
+                    Anime
+                </a>
+
+                <a href="#genres">
+                    Genres
+                </a>
+
+                <a href="mylist.html">
+                    My List
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ANIMESIA. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

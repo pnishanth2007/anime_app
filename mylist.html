@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>ANIMESIA - My List</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="particles"></div>
+
+
+    <!-- ===============================
+         NAVIGATION
+         =============================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <img
+                src="logo.png"
+                alt="ANIMESIA Logo"
+            >
+
+        </div>
+
+
+        <nav>
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="home.html#anime-section">
+                Anime
+            </a>
+
+            <a href="home.html#genres">
+                Genres
+            </a>
+
+            <a
+                href="mylist.html"
+                class="active"
+            >
+                My List
+            </a>
+
+            <a href="profile.html">
+    Profile
+</a>
+
+        </nav>
+
+
+        <div class="profile">
+
+            <span id="welcomeUser">
+                User
+            </span>
+
+            <button
+                id="logoutBtn"
+                type="button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ===============================
+         MAIN
+         =============================== -->
+
+    <main class="mylist-page">
+
+
+        <!-- HEADER -->
+
+        <section class="mylist-header">
+
+            <p class="hero-small">
+                YOUR COLLECTION
+            </p>
+
+
+            <h1>
+                My List
+            </h1>
+
+
+            <p>
+                Your favourite anime,
+                all in one place.
+            </p>
+
+        </section>
+
+
+
+        <!-- ANIME LIST -->
+
+        <section class="mylist-content">
+
+            <div id="myListContainer"></div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ===============================
+         FOOTER
+         =============================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    ANIMESIA
+                </h2>
+
+                <p>
+                    Enter a new universe of legendary anime,
+                    unforgettable characters and endless adventures.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="home.html#anime-section">
+                    Anime
+                </a>
+
+                <a href="home.html#genres">
+                    Genres
+                </a>
+
+                <a href="mylist.html">
+                    My List
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Popular Genres
+                </h3>
+
+                <a href="home.html#anime-section">
+                    Action
+                </a>
+
+                <a href="home.html#anime-section">
+                    Adventure
+                </a>
+
+                <a href="home.html#anime-section">
+                    Fantasy
+                </a>
+
+                <a href="home.html#anime-section">
+                    Comedy
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ANIMESIA. All rights reserved.
+            </p>
+
+
+            <button
+                type="button"
+                onclick="window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })"
+            >
+                ↑ Back to Top
+            </button>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ANIMESIA - Dashboard</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <style>
+
+        .dashboard-page {
+            min-height: calc(100vh - 76px);
+            padding: 50px 7% 80px;
+        }
+
+        .dashboard-header {
+            max-width: 1100px;
+            margin: auto;
+            margin-bottom: 35px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 38px;
+            margin: 8px 0;
+        }
+
+        .dashboard-header p {
+            color: #999;
+        }
+
+        .dashboard-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .dashboard-card {
+            padding: 25px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.10);
+
+            transition: 0.3s;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+
+            background:
+                rgba(255,255,255,0.08);
+        }
+
+        .dashboard-card .icon {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .dashboard-card strong {
+            display: block;
+
+            font-size: 32px;
+
+            margin-bottom: 6px;
+        }
+
+        .dashboard-card span {
+            color: #999;
+            font-size: 13px;
+        }
+
+
+        .dashboard-section {
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .dashboard-section h2 {
+            margin-bottom: 20px;
+        }
+
+
+        .activity-card {
+
+            padding: 25px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+
+        .activity-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 17px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .activity-row:last-child {
+            border-bottom: none;
+        }
+
+        .activity-left {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .activity-icon {
+            font-size: 20px;
+        }
+
+        .activity-text {
+            color: #ddd;
+        }
+
+        .activity-time {
+            color: #777;
+            font-size: 12px;
+        }
+
+
+        .top-anime-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .top-anime-card {
+
+            overflow: hidden;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .top-anime-card img {
+
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .top-anime-info {
+            padding: 15px;
+        }
+
+        .top-anime-info h3 {
+            margin: 0 0 8px;
+        }
+
+        .top-anime-info p {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+
+        .dashboard-button {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            background: white;
+
+            color: #111;
+
+            text-decoration: none;
+
+            font-weight: 700;
+        }
+
+
+        @media (max-width: 850px) {
+
+            .dashboard-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .top-anime-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .dashboard-page {
+                padding: 35px 15px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .top-anime-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .activity-row {
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="particles"></div>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <a href="home.html">
+
+                <img
+                    src="logo.png"
+                    alt="ANIMESIA">
+
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="home.html#anime-section">
+                Anime
+            </a>
+
+            <a href="power-arena.html">
+                Power Arena
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="mylist.html">
+                My List
+            </a>
+
+        </nav>
+
+
+        <div class="profile">
+
+            <span id="welcomeUser">
+                User
+            </span>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+
+    <main class="dashboard-page">
+
+
+        <section class="dashboard-header">
+
+            <p class="hero-small">
+                ANIMESIA ANALYTICS
+            </p>
+
+            <h1>
+                Welcome,
+                <span id="dashboardUser">
+                    User
+                </span>
+                👋
+            </h1>
+
+            <p>
+                Track your anime activity and explore your universe.
+            </p>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="dashboard-grid">
+
+
+            <div class="dashboard-card">
+
+                <div class="icon">
+                    ⭐
+                </div>
+
+                <strong id="dashboardMyList">
+                    0
+                </strong>
+
+                <span>
+                    MY LIST
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="icon">
+                    🎬
+                </div>
+
+                <strong>
+                    10
+                </strong>
+
+                <span>
+                    ANIME AVAILABLE
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="icon">
+                    ⚔️
+                </div>
+
+                <strong>
+                    20
+                </strong>
+
+                <span>
+                    POWER ARENA CHARACTERS
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="icon">
+                    🔥
+                </div>
+
+                <strong id="battleCount">
+                    0
+                </strong>
+
+                <span>
+                    BATTLES
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOP ANIME -->
+
+        <section class="dashboard-section">
+
+            <p class="hero-small">
+                TOP PICKS
+            </p>
+
+            <h2>
+                Popular Anime
+            </h2>
+
+
+            <div class="top-anime-grid">
+
+
+                <div class="top-anime-card">
+
+                    <img
+                        src="onepiece.png"
+                        alt="One Piece">
+
+                    <div class="top-anime-info">
+
+                        <h3>
+                            One Piece
+                        </h3>
+
+                        <p>
+                            ⭐ 9.0
+                            &nbsp; • &nbsp;
+                            1999
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="top-anime-card">
+
+                    <img
+                        src="aot.jpg"
+                        alt="Attack on Titan">
+
+                    <div class="top-anime-info">
+
+                        <h3>
+                            Attack on Titan
+                        </h3>
+
+                        <p>
+                            ⭐ 9.1
+                            &nbsp; • &nbsp;
+                            2013
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="top-anime-card">
+
+                    <img
+                        src="solo.jpg"
+                        alt="Solo Leveling">
+
+                    <div class="top-anime-info">
+
+                        <h3>
+                            Solo Leveling
+                        </h3>
+
+                        <p>
+                            ⭐ 8.8
+                            &nbsp; • &nbsp;
+                            2024
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="top-anime-card">
+
+                    <img
+                        src="naruto.jpg"
+                        alt="Naruto">
+
+                    <div class="top-anime-info">
+
+                        <h3>
+                            Naruto
+                        </h3>
+
+                        <p>
+                            ⭐ 8.7
+                            &nbsp; • &nbsp;
+                            2002
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIVITY -->
+
+        <section class="dashboard-section">
+
+            <p class="hero-small">
+                RECENT ACTIVITY
+            </p>
+
+            <h2>
+                Your Activity
+            </h2>
+
+
+            <div class="activity-card">
+
+                <div class="activity-row">
+
+                    <div class="activity-left">
+
+                        <span class="activity-icon">
+                            ⭐
+                        </span>
+
+                        <span class="activity-text">
+                            My List activity
+                        </span>
+
+                    </div>
+
+                    <span class="activity-time">
+                        Live
+                    </span>
+
+                </div>
+
+
+                <div class="activity-row">
+
+                    <div class="activity-left">
+
+                        <span class="activity-icon">
+                            ⚔️
+                        </span>
+
+                        <span class="activity-text">
+                            Power Arena battles
+                        </span>
+
+                    </div>
+
+                    <span class="activity-time">
+                        Live
+                    </span>
+
+                </div>
+
+
+                <div class="activity-row">
+
+                    <div class="activity-left">
+
+                        <span class="activity-icon">
+                            👤
+                        </span>
+
+                        <span class="activity-text">
+                            Profile activity
+                        </span>
+
+                    </div>
+
+                    <span class="activity-time">
+                        Active
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="home.html"
+                class="dashboard-button">
+
+                EXPLORE ANIME →
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        /* ================================
+           DASHBOARD USER
+        ================================= */
+
+        const savedUser =
+            localStorage.getItem(
+                "ANIMESIAUser"
+            );
+
+
+        if (savedUser) {
+
+            try {
+
+                const user =
+                    JSON.parse(savedUser);
+
+
+                const dashboardUser =
+                    document.getElementById(
+                        "dashboardUser"
+                    );
+
+
+                if (dashboardUser) {
+
+                    dashboardUser.textContent =
+                        user.username;
+
+                }
+
+            } catch (error) {
+
+                console.log(
+                    "User data error"
+                );
+
+            }
+
+        }
+
+
+        /* ================================
+           MY LIST COUNT
+        ================================= */
+
+        let myList = [];
+
+        try {
+
+            myList =
+                JSON.parse(
+                    localStorage.getItem(
+                        "ANIMESIAMyList"
+                    )
+                ) || [];
+
+        } catch (error) {
+
+            myList = [];
+
+        }
+
+
+        const dashboardMyList =
+            document.getElementById(
+                "dashboardMyList"
+            );
+
+
+        if (dashboardMyList) {
+
+            dashboardMyList.textContent =
+                myList.length;
+
+        }
+
+
+        /* ================================
+           BATTLE COUNT
+        ================================= */
+
+        const battleCount =
+            document.getElementById(
+                "battleCount"
+            );
+
+
+        if (battleCount) {
+
+            const battles =
+                parseInt(
+                    localStorage.getItem(
+                        "ANIMESIABattleCount"
+                    )
+                ) || 0;
+
+
+            battleCount.textContent =
+                battles;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

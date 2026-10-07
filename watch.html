@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ANIMESIA - Watch</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="particles"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="logo.png" alt="ANIMESIA Logo">
+        </div>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="home.html#anime-section">Anime</a>
+            <a href="home.html#genres">Genres</a>
+            <a href="mylist.html">My List</a>
+        </nav>
+
+        <div class="profile">
+            <span id="welcomeUser">User</span>
+            <button id="logoutBtn" type="button">Logout</button>
+        </div>
+
+    </header>
+
+
+    <!-- WATCH PAGE -->
+    <main class="watch-page">
+
+        <!-- VIDEO PLAYER -->
+        <section class="video-section">
+
+            <div class="video-box" id="videoBox">
+
+                <div class="video-overlay"></div>
+
+                <div class="play-icon" id="playButton">
+                    ▶
+                </div>
+
+                <div class="playing-text" id="playingText">
+                    NOW PLAYING
+                </div>
+
+                <div class="video-controls" id="videoControls">
+
+                    <button id="controlPlay" type="button">
+                        ▶
+                    </button>
+
+                    <div class="progress-area">
+
+                        <div class="progress-bar">
+                            <div
+                                class="progress-fill"
+                                id="progressFill">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button id="muteButton" type="button">
+                        🔊
+                    </button>
+
+                    <input
+                        type="range"
+                        id="volumeSlider"
+                        min="0"
+                        max="100"
+                        value="100"
+                    >
+
+                    <span id="videoTime">
+                        00:00 / 24:00
+                    </span>
+
+                    <button id="fullscreenButton" type="button">
+                        ⛶
+                    </button>
+
+                </div>
+
+                <p>VIDEO PLAYER</p>
+
+                <small>
+                    ANIMESIA streaming experience
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANIME INFORMATION -->
+        <section class="watch-info">
+
+            <div class="watch-title-row">
+
+                <div>
+
+                    <p class="hero-small">
+                        NOW STREAMING
+                    </p>
+
+                    <h1 id="animeTitle">
+                        Naruto
+                    </h1>
+
+                    <div
+                        class="watch-meta"
+                        id="animeMeta">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="description"
+                id="animeDescription">
+
+                Enter a world of legendary warriors,
+                powerful friendships, dangerous battles
+                and unforgettable adventures.
+
+            </p>
+
+
+            <div class="watch-actions">
+
+                <button
+                    class="watch-now-btn"
+                    id="watchNowBtn"
+                    type="button">
+
+                    ▶ WATCH NOW
+
+                </button>
+
+                <button
+                    class="back-anime-btn"
+                    type="button"
+                    onclick="window.location.href='home.html'">
+
+                    ← BACK TO ANIME
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- EPISODES -->
+        <section class="episodes-section">
+
+            <div class="section-heading">
+
+                <p class="hero-small">
+                    SELECT EPISODE
+                </p>
+
+                <h2>
+                    Episodes
+                </h2>
+
+            </div>
+
+
+            <div class="episode-list">
+
+                <button
+                    class="episode-btn active"
+                    type="button"
+                    data-episode="1">
+
+                    Episode 1
+
+                </button>
+
+                <button
+                    class="episode-btn"
+                    type="button"
+                    data-episode="2">
+
+                    Episode 2
+
+                </button>
+
+                <button
+                    class="episode-btn"
+                    type="button"
+                    data-episode="3">
+
+                    Episode 3
+
+                </button>
+
+                <button
+                    class="episode-btn"
+                    type="button"
+                    data-episode="4">
+
+                    Episode 4
+
+                </button>
+
+                <button
+                    class="episode-btn"
+                    type="button"
+                    data-episode="5">
+
+                    Episode 5
+
+                </button>
+
+                <button
+                    class="episode-btn"
+                    type="button"
+                    data-episode="6">
+
+                    Episode 6
+
+                </button>
+
+                <button
+                    class="episode-btn"
+                    type="button"
+                    data-episode="7">
+
+                    Episode 7
+
+                </button>
+
+                <button
+                    class="episode-btn"
+                    type="button"
+                    data-episode="8">
+
+                    Episode 8
+
+                </button>
+
+                <button
+                    class="episode-btn"
+                    type="button"
+                    data-episode="9">
+
+                    Episode 9
+
+                </button>
+
+                <button
+                    class="episode-btn"
+                    type="button"
+                    data-episode="10">
+
+                    Episode 10
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h2>ANIMESIA</h2>
+
+                <p>
+                    Enter a new universe of anime,
+                    discovery and adventure.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="home.html">
+                    Home
+                </a>
+
+                <a href="mylist.html">
+                    My List
+                </a>
+
+                <a href="home.html#genres">
+                    Genres
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ANIMESIA. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MAIN JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

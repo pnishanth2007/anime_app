@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ANIMESIA - Create Account</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="particles"></div>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>ANIMESIA</h1>
+
+            <h2>CREATE YOUR UNIVERSE</h2>
+
+            <p>Begin your journey with ANIMESIA.</p>
+
+            <form id="registerForm">
+
+                <div class="input-box">
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Username"
+                        required
+                    >
+                </div>
+
+                <div class="input-box">
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Email"
+                        required
+                    >
+                </div>
+
+                <div class="input-box password-box">
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Password"
+                        required
+                    >
+
+                    <span id="toggleRegisterPassword">👁</span>
+                </div>
+
+                <div class="input-box password-box">
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm Password"
+                        required
+                    >
+
+                    <span id="toggleConfirmPassword">👁</span>
+                </div>
+
+                <button type="submit">
+                    CREATE ACCOUNT →
+                </button>
+
+            </form>
+
+            <p class="signup">
+                Already have an account?
+
+                <a href="index.html">
+                    Sign in
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
